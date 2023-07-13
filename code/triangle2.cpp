@@ -1,4 +1,4 @@
-#include "planar_mesh.hpp"
+#include "triangle2.hpp"
 
 Triangle2::Triangle2(Point2 p1, Point2 p2, Point2 p3) {
     a = p1;

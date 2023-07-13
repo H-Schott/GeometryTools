@@ -1,6 +1,7 @@
 #ifndef __TRIANGLE2_HPP__
 #define __TRIANGLE2_HPP__
 
+#include "point2.hpp"
 
 class Triangle2
 {
