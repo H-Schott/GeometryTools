@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 3.1)
 
 project(GeometryTools)
 
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -30,8 +31,7 @@ set(SRC_DIR code)
 include_directories(${SRC_DIR})
 aux_source_directory(${SRC_DIR} SRC_FILES)
 if (WIN32)
-	add_executable(${DEMO} 
-		${IMGUI_SRC_FILES} 
+	add_library(${DEMO} STATIC
 		${SRC_FILES}
 		${SRC_DIR}/point.hpp
 		${SRC_DIR}/point2.hpp
@@ -40,8 +40,7 @@ if (WIN32)
 		${SRC_DIR}/vector.hpp
 	)
 else()
-	add_executable(${DEMO} 
-		${IMGUI_SRC_FILES} 
+	add_library(${DEMO} STATIC
 		${SRC_FILES}
 		${SRC_DIR}/point.hpp
 		${SRC_DIR}/point2.hpp
@@ -51,19 +50,10 @@ else()
 	)
 endif()
 
-# data folder copy on post build
-set(DATA_DIR data)
-add_custom_command(
-	TARGET ${DEMO} POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy_directory
-			${CMAKE_SOURCE_DIR}/${DATA_DIR}
-			${CMAKE_CURRENT_BINARY_DIR}/${DATA_DIR}
-)
-
 if (!WIN32)
 	target_link_libraries(${DEMO} "stdc++fs")
 endif()
 target_compile_definitions(
     ${DEMO} PUBLIC
-    -DPATH_TO_SRC_DIRECTORY="${CMAKE_SOURCE_DIR}/"
+    -DPATH_TO_SRC_DIRECTORY="${CMAKE_SOURCE_DIR}/code/"
 )
