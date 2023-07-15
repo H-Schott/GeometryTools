@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cmath>
 
-typedef unsigned int uint;
+//typedef unsigned int uint;
 
 class Vector;
 
@@ -18,8 +18,8 @@ public:
     Point(double _x, double _y, double _z);
     Point(const Point& pt);
 
-    double operator[](uint id) const;
-    double& operator[](uint id);
+    double operator[](unsigned int id) const;
+    double& operator[](unsigned int id);
     
     Point operator+(const Vector& vec) const;
     Point operator+(const Point& pt) const;
@@ -56,7 +56,7 @@ Point Ceil(const Point& pt);
 
 Point Abs(const Point& pt);
 
-Point Permute(const Point& pt, uint x, uint y, uint z);
+Point Permute(const Point& pt, unsigned int x, unsigned int y, unsigned int z);
 
 
 #endif

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-typedef unsigned int uint;
+//typedef unsigned int uint;
 
 class Point;
 
@@ -19,8 +19,8 @@ public:
     Vector(double _x, double _y, double _z);
     Vector(const Point& p);
 
-    double operator[](uint id) const;
-    double& operator[](uint id);
+    double operator[](unsigned int id) const;
+    double& operator[](unsigned int id);
 
     Vector operator+(const Vector& vec) const;
     Vector operator-() const;
@@ -78,14 +78,14 @@ double MinComponent(const Vector& vec);
 
 double MaxComponent(const Vector& vec);
 
-uint MaxDimension(const Vector& vec);
+unsigned int MaxDimension(const Vector& vec);
 
 Vector Min(const Vector& v1, const Vector& v2);
 
 Vector Max(const Vector& v1, const Vector& v2);
 
 
-Vector Permute(const Vector& vec, uint xid, uint yid, uint zid);
+Vector Permute(const Vector& vec, unsigned int xid, unsigned int yid, unsigned int zid);
 
 
 inline void CoordinateSystem(const Vector& v1, Vector& v2, Vector& v3) {
