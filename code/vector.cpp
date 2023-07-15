@@ -48,13 +48,13 @@ Vector Vector::Normalized() const {
     return (*this) / Norm();
 };
 
-double Vector::operator[](uint id) const {
+double Vector::operator[](unsigned int id) const {
     if (id == 0) return x;
     if (id == 1) return y;
     return z;
 }
 
-double& Vector::operator[](uint id) {
+double& Vector::operator[](unsigned int id) {
     if (id == 0) return x;
     if (id == 1) return y;
     return z;
@@ -73,7 +73,7 @@ double MaxComponent(const Vector& vec) {
     return std::max(vec.x, std::max(vec.y, vec.z));
 }
 
-uint MaxDimension(const Vector& vec) {
+unsigned int MaxDimension(const Vector& vec) {
     return (vec.x > vec.y) ? ((vec.x > vec.z) ? 0 : 2) : ((vec.y > vec.z) ? 1 : 2);
 }
 
@@ -86,7 +86,7 @@ Vector Max(const Vector& v1, const Vector& v2) {
 }
 
 
-Vector Permute(const Vector& vec, uint xid, uint yid, uint zid) {
+Vector Permute(const Vector& vec, unsigned int xid, unsigned int yid, unsigned int zid) {
     return Vector(vec[xid], vec[yid], vec[zid]);
 }
 

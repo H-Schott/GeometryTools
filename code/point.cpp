@@ -17,13 +17,13 @@ Point::Point(const Point& pt) : x(double(pt.x)), y(double(pt.y)), z(double(pt.z)
 
 };
 
-double Point::operator[](uint id) const {
+double Point::operator[](unsigned int id) const {
     if(id == 0) return x;
     if(id == 1) return y;
     return z;
 };
 
-double& Point::operator[](uint id) {
+double& Point::operator[](unsigned int id) {
     if(id == 0) return x;
     if(id == 1) return y;
     return z;
@@ -85,7 +85,7 @@ Point Abs(const Point& pt) {
     return Point(std::abs(pt.x), std::abs(pt.y), std::abs(pt.z));
 }
 
-Point Permute(const Point& pt, uint x, uint y, uint z) {
+Point Permute(const Point& pt, unsigned int x, unsigned int y, unsigned int z) {
     return Point(pt[x], pt[y], pt[z]);
 }
 
