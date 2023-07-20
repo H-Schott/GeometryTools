@@ -58,5 +58,7 @@ Point Abs(const Point& pt);
 
 Point Permute(const Point& pt, unsigned int x, unsigned int y, unsigned int z);
 
+double CoTan(const Point& p1, const Point& p2, const Point& p3);
+
 
 #endif

@@ -89,4 +89,14 @@ Point Permute(const Point& pt, unsigned int x, unsigned int y, unsigned int z) {
     return Point(pt[x], pt[y], pt[z]);
 }
 
+double CoTan(const Point& p1, const Point& p2, const Point& p3) {
+    double x = (p1.y - p2.y)*(p3.z - p2.z) - (p1.z - p2.z)*(p3.y - p2.y);
+    double y = (p1.z - p2.z)*(p3.x - p2.x) - (p1.x - p2.x)*(p3.z - p2.z);
+    double z = (p1.x - p2.x)*(p3.y - p2.y) - (p1.y - p2.y)*(p3.x - p2.x);
+    double dot = (p1.x - p2.x)*(p3.x - p2.x) + (p1.y - p2.y)*(p3.y - p2.y) + (p1.z - p2.z)*(p3.z - p2.z);
+
+    return dot / sqrt(x*x + y*y + z*z);
+}
+
+
 //EOF
