@@ -41,7 +41,7 @@ Vector& Vector::operator+=(const Vector& v) {
     return (*this);
 }
 
-Vector& Vector::operator+=(const Vector& v) {
+Vector& Vector::operator-=(const Vector& v) {
     *this = *this - v;
     return (*this);
 }
