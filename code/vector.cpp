@@ -41,6 +41,11 @@ Vector& Vector::operator+=(const Vector& v) {
     return (*this);
 }
 
+Vector& Vector::operator+=(const Vector& v) {
+    *this = *this - v;
+    return (*this);
+}
+
 Vector& Vector::operator/=(double a) {
     *this = *this / a;
     return (*this);
