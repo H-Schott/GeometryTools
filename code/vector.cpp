@@ -37,7 +37,8 @@ Vector Vector::operator/(double a) const {
 };
 
 Vector& Vector::operator+=(const Vector& v) {
-    return (*this) + v;
+    *this = *this + v;
+    return (*this);
 }
 
 Vector& Vector::operator/=(double a) {
