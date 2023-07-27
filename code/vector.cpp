@@ -36,6 +36,10 @@ Vector Vector::operator/(double a) const {
     return Vector(x / a, y / a, z / a);
 };
 
+Vector Vector::operator/=(double a) {
+    return (*this) / a;
+}
+
 double Vector::SquaredNorm() const {
     return x * x + y * y + z * z;
 };

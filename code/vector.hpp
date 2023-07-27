@@ -27,6 +27,7 @@ public:
     Vector operator-(const Vector& vec) const;
     Vector operator*(double a) const;
     Vector operator/(double a) const;
+    Vector operator/=(double a);
 
     double SquaredNorm() const;
     double Norm() const;
