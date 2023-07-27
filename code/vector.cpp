@@ -36,6 +36,10 @@ Vector Vector::operator/(double a) const {
     return Vector(x / a, y / a, z / a);
 };
 
+Vector Vector::operator+=(const Vector& v) {
+    return (*this) + v;
+}
+
 Vector Vector::operator/=(double a) {
     return (*this) / a;
 }
