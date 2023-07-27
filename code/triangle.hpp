@@ -13,6 +13,7 @@ public:
     Triangle();
     Triangle(Point a, Point b, Point c);
 
+    Vector Edge(unsigned int edge_id) const;
     Vector Normal(bool unit=true) const;
     double Area() const;
 };
