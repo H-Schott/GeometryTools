@@ -42,7 +42,8 @@ Vector& Vector::operator+=(const Vector& v) {
 }
 
 Vector& Vector::operator/=(double a) {
-    return (*this) / a;
+    *this = *this / a;
+    return (*this);
 }
 
 double Vector::SquaredNorm() const {
