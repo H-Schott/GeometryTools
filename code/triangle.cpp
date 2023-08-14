@@ -22,6 +22,10 @@ Vector Triangle::Normal(bool unit) const {
     return normal;
 }
 
+Point Triangle::Barycentre() const {
+    return (a + b + c) / 3;
+}
+
 double Triangle::Area() const {
     return 0.5 * Cross(Vector(b - a), Vector(c - a)).Norm();
 }

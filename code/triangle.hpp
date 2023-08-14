@@ -15,6 +15,7 @@ public:
 
     Vector Edge(unsigned int edge_id) const;
     Vector Normal(bool unit=true) const;
+    Point Barycentre() const;
     double Area() const;
 };
 
