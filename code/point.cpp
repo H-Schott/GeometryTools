@@ -41,12 +41,27 @@ Point Point::operator-(const Vector& vec) const {
     return (*this) + (-vec);
 };
 
+Point Point::operator-=(const Point& pt) {
+    x = x - pt.x;
+    y = y - pt.y;
+    z = z - pt.z;
+    
+    return *this;
+}
+
 Vector Point::operator-(const Point& pt) const {
     return Vector(x - pt.x, y - pt.y, z - pt.z);
 };
 
 Point Point::operator*(double a) const {
     return Point(a * x, a * y, a * z);
+};
+
+Point Point::operator*=(double a) {
+    x = a * x;
+    y = a * y;
+    z = a * z;
+    return *this;
 };
 
 Point Point::operator/(double a) const {

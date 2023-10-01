@@ -24,8 +24,10 @@ public:
     Point operator+(const Vector& vec) const;
     Point operator+(const Point& pt) const;
     Point operator-(const Vector& vec) const;
+    Point operator-=(const Point& pt);
     Vector operator-(const Point& pt) const;
     Point operator*(double a) const;
+    Point operator*=(double a);
     Point operator/(double a) const;
 };
 
