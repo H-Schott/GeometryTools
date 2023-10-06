@@ -34,6 +34,10 @@ public:
     double SquaredNorm() const;
     double Norm() const;
     Vector Normalized() const;
+
+    static Vector X() { return Vector(1., 0., 0.); };
+    static Vector Y() { return Vector(0., 1., 0.); };
+    static Vector Z() { return Vector(0., 0., 1.); };
 };
 
 
