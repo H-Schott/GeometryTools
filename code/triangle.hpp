@@ -17,6 +17,7 @@ public:
     Vector Normal(bool unit=true) const;
     Point Barycentre() const;
     double Area() const;
+    void Bounds(Point& p_min, Point& p_max) const;
 };
 
 

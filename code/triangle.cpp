@@ -30,5 +30,16 @@ double Triangle::Area() const {
     return 0.5 * Cross(Vector(b - a), Vector(c - a)).Norm();
 }
 
+void Triangle::Bounds(Point& p_min, Point& p_max) const {
+    p_min = a;
+    p_max = a;
+
+    p_min = Min(p_min, b);
+    p_min = Min(p_min, c);
+
+    p_max = Max(p_max, b);
+    p_max = Max(p_max, c);
+}
+
 
 // EOF
